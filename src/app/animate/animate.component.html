@@ -1,0 +1,10 @@
+<md-card-content align="center">
+	<div *ngFor="let item of list" style="margin:auto;text-align: center;">
+		<app-list-item [show]="item" [clear]="cls"></app-list-item>
+	</div>
+	<md-card-actions align="end">
+		<button md-raised-button class="demo-button" color="warn" *ngIf="!completedAnim" (click)="clearAnim()" [disabled]="!clearButton">Next >> </button>
+		<button md-raised-button class="demo-button" color="primary" *ngIf="completedAnim" (click)="gotoConcent()" [disabled]="!gotoButton">Go to concent >> </button>
+	</md-card-actions>
+	<div *ngFor="let item of data | async">{{item.value}}</div>
+</md-card-content>
